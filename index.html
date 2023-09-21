@@ -70,22 +70,10 @@
             background: linear-gradient(to bottom, #cc0000, #990000);
         }
 
-        .message-box {
-            background-color: #f2f2f2;
-            border-radius: 10px;
-            padding: 20px;
-            max-width: 400px;
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .message-box .title {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .message-box .content {
+        .label {
+            color: #f2f2f2;
             font-size: 18px;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -97,15 +85,11 @@
             Quality, without a penny.
         </div>
         <div class="buttons">
-            <a href="#" class="button" onclick="showMessageBox('Sorry', 'Sorry, dna z is currently not released.')">Download</a>
-            <a href="#" class="button" onclick="showMessageBox('Sorry', 'Sorry, dna z is currently not released.')">Alternate Download</a>
+            <a href="#" class="button" onclick="showLabel('Sorry, not released yet.')">Download</a>
+            <a href="#" class="button" onclick="showLabel('Sorry, not released yet.')">Alternate Download</a>
             <a href="https://dsc.gg/dnastuff" class="button">Discord</a>
         </div>
-    </div>
-
-    <div id="message-box" class="message-box">
-        <div class="title"></div>
-        <div class="content"></div>
+        <div id="label" class="label"></div>
     </div>
 
     <script>
@@ -117,11 +101,9 @@
             logo.classList.remove('glow');
         });
 
-        function showMessageBox(title, content) {
-            const messageBox = document.getElementById('message-box');
-            messageBox.querySelector('.title').textContent = title;
-            messageBox.querySelector('.content').textContent = content;
-            messageBox.style.display = 'block';
+        function showLabel(content) {
+            const label = document.getElementById('label');
+            label.textContent = content;
         }
     </script>
 </body>
